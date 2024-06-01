@@ -51,7 +51,7 @@ export class Deck {
 
 		this.cards = this.build(this.numberOfFullDecks)
 
-		this.shuffle()
+		if(this.allowedValues) this.shuffle()
 
 		return this
 	}
@@ -78,6 +78,31 @@ export class Deck {
 		
 		this.usedCards.push(...cards)
 		return cards
+	}
+
+	disableCard(card: Card | Card['id']) {
+		const id = typeof card === 'string' ? card : card.id
+
+		const indexUsed = this.cards.findIndex(
+		  	(cardInDeck) => cardInDeck.id == id
+		)
+	
+		if(indexUsed > -1) {
+			const _card = this.cards[indexUsed]
+
+			this.cards.splice(indexUsed, 1);
+			this.usedCards.push(_card);
+		} else {
+		  	throw Error('Card not found in the deck');
+		}
+	}
+
+	len() {
+		return this.cards.length
+	}
+
+	used() {
+		return this.usedCards.length
 	}
 }
 
