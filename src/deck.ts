@@ -75,7 +75,9 @@ export class Deck {
 
 	drawMany(count: number) {
 		const cards = this.cards.slice(0, count)
+		const notUsedcards = this.cards.slice(count)
 		
+		this.cards = notUsedcards
 		this.usedCards.push(...cards)
 		return cards
 	}

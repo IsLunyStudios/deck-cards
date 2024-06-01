@@ -1,11 +1,12 @@
 {
   "name": "@isluny/deck-cards",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic package for generating card decks and managing basic usage logic.",
   "main": "dist/index.js",
   "repository": "https://github.com/IsLunyStudios/deck-cards",
   "author": "JVOPINHO",
   "license": "MIT",
+  "keywords": ["deck", "cards", "playing", "poker", "game"],
   "devDependencies": {
     "@types/node": "^20.12.13",
     "@typescript-eslint/eslint-plugin": "6.0.0",
